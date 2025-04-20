@@ -51,10 +51,10 @@ function PersistentWindow:open()
   end
 
   if not self._has_opened then
-    if self._bufopts.filetype then
-      nio.api.nvim_buf_set_option(self:buffer(), "filetype", self._bufopts.filetype)
-    end
     self._has_opened = true
+  end
+  if self._bufopts.filetype then
+    nio.api.nvim_buf_set_option(self:buffer(), "filetype", self._bufopts.filetype)
   end
 
   return self._win
