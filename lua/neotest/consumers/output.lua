@@ -84,6 +84,8 @@ local function open_output(result, opts)
   end
 
   vim.api.nvim_buf_set_option(buf, "filetype", "neotest-output")
+
+  vim.keymap.set("n", "q", "<cmd>q<cr>", { buffer = buf })
 end
 
 local neotest = {}
